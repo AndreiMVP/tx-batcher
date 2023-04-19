@@ -1,4 +1,4 @@
-import { Handler } from "@netlify/functions";
+import { Handler, schedule } from "@netlify/functions";
 import { Call } from "../types";
 import { CHAIN_LIST, Chain } from "../constants/chains";
 import { providers, signers } from "../constants/providers";
@@ -26,7 +26,7 @@ const getGasEstimate = async (
   req: TransactionRequest
 ): Promise<bigint> => await signers[chain].estimateGas(req).catch(() => null);
 
-export const handler: Handler = async () => {
+const multiCallHandler: Handler = async () => {
   for (const chain of CHAIN_LIST) {
     let estimates = await Promise.all(
       calls.map(({ target, callData }) =>
@@ -73,3 +73,5 @@ export const handler: Handler = async () => {
     body: JSON.stringify({ msg: "ok" }),
   };
 };
+
+export const handler = schedule("@hourly", multiCallHandler);
