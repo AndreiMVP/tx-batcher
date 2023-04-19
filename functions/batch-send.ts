@@ -59,7 +59,7 @@ export const handler: Handler = async () => {
     const tx = await multicall[chain].aggregate3(batch, {
       maxFeePerGas: gasPrice,
       maxPriorityFeePerGas: formatUnits(1, "gwei"),
-      gasLimit: await signers[chain].estimateGas({
+      gasLimit: await getGasEstimate(chain, {
         to: await multicall[chain].getAddress(),
         data: IMulticall.encodeFunctionData("aggregate3", [batch]),
       }),
