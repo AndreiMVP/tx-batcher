@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "esModuleInterop": true,
+        "target": "es6",
+        "noImplicitAny": true,
+        "moduleResolution": "node",
+        "sourceMap": true,
+        "resolveJsonModule": true,
+        "outDir": "dist",
+        "baseUrl": ".",
+        "skipLibCheck": true,
+        "paths": {
+            "*": ["node_modules/*"]
+        }
+    },
+    "include": [
+        "functions/**/*",
+        "constants/**/*",
+        "generated/**/*",
+        "./env.d.ts"
+    ]
+}
