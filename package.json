@@ -1,10 +1,36 @@
 {
-    "name": "netlify-lambda",
-    "version": "1.0.0",
-    "main": "index.js",
+    "name": "@kleros/multicall-relayer",
+    "version": "0.1.0",
+    "description": "Multicall3 typescript bindings and transaction relayer logic",
+    "repository": "git@github.com:kleros/multicall-relayer.git",
+    "author": "Kleros <contact@kleros.io> (https://kleros.io)",
+    "bugs": {
+        "url": "https://github.com/kleros/multicall-relayer/issues"
+    },
+    "homepage": "https://github.com/kleros/multicall-relayer#readme",
     "license": "MIT",
+    "keywords": [
+        "ethereum",
+        "multicall"
+    ],
+    "packageManager": "yarn@3.3.1",
+    "engines": {
+        "node": ">=16.0.0"
+    },
+    "volta": {
+        "node": "16.20.0",
+        "yarn": "3.3.1"
+    },
+    "publishConfig": {
+        "access": "public",
+        "tag": "latest"
+    },
+    "main": "index.ts",
     "scripts": {
-        "gen": "typechain --target ethers-v6 --out-dir generated/contracts ./abis/*.json"
+        "gen": "typechain --target ethers-v6 --out-dir src/contracts ./abis/*.json",
+        "release:patch": "scripts/publish.sh patch",
+        "release:minor": "scripts/publish.sh minor",
+        "release:major": "scripts/publish.sh major"
     },
     "dependencies": {
         "@logtail/node": "^0.4.0",

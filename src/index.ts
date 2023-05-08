@@ -7,7 +7,7 @@ import {
   Wallet,
   formatUnits,
 } from "ethers";
-import { Multicall3, Multicall3__factory } from "./generated/contracts";
+import { Multicall3, Multicall3__factory } from "./contracts";
 import { Logtail } from "@logtail/node";
 import { AMQP } from "./utils";
 
