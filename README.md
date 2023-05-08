@@ -1,16 +1,16 @@
-# MultiCaller
+# MulticallRelayer
 
 Adds multiple calldatas to a batch and calls [**Multicall3**](https://github.com/mds1/multicall/blob/main/src/Multicall3.sol) contract's [`aggregate3`](https://github.com/mds1/multicall/blob/main/src/Multicall3.sol#L98-L123) function.
 
 ## Installing
 ```sh
-$ yarn add axios
+$ yarn add @kleros/multicall-relayer
 ```
 
 ## Using it
 #### Create MultiCaller
 ```js
-import MultiCaller from "@kleros/multicaller"
+import MultiCaller from "@kleros/multicall-relayer"
 
 const multicaller = new MultiCaller({
     rpcUrl,
