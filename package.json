@@ -4,21 +4,16 @@
     "main": "index.js",
     "license": "MIT",
     "scripts": {
-        "dev": "netlify dev",
-        "env-types": "npx gen-env-types",
         "gen": "typechain --target ethers-v6 --out-dir generated/contracts ./abis/*.json"
     },
     "dependencies": {
+        "@logtail/node": "^0.4.0",
+        "@types/amqplib": "^0.10.1",
         "amqplib": "^0.10.3",
-        "dotenv": "^16.0.3",
         "ethers": "^6.3.0"
     },
     "devDependencies": {
-        "@netlify/functions": "^1.4.0",
         "@typechain/ethers-v6": "^0.3.0",
-        "@types/node": "^18.15.11",
-        "http-status-codes": "^2.2.0",
-        "netlify-cli": "^13.2.2",
         "typechain": "^8.1.1",
         "typescript": "^4.9.5"
     }
