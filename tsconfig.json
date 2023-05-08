@@ -16,7 +16,7 @@
     "include": [
         "functions/**/*",
         "constants/**/*",
-        "generated/**/*",
+        "src/**/*",
         "./env.d.ts"
 , "index.ts"    ]
 }
